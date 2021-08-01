@@ -1,8 +1,11 @@
 ---
 title: About
 icon: fas fa-info
-order: 4
+order: 1
 ---
 
+During daytime, I am a software engineer at [Qlik](https://www.qlik.com/us/), working with charts, visualisation, and frontend development.
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+In the afternoon, you might find me jogging around and enjoying nature or pushing weight in a gym. In the evening, I whip my lazy ass into learning all sorts of stuff from Web Dev, Data Science, AI, or Math and Physics. 
+
+Best way to reach out: [bao.hodang@gmail.com](mailto:bao.hodang@gmail.com)
