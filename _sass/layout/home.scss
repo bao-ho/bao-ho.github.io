@@ -50,7 +50,7 @@
 
 } // .pagination
 
-#post-list {
+.post-list {
   margin-top: 1rem;
   padding-right: 0.5rem;
 
@@ -105,7 +105,7 @@
 
   } // .post-preview
 
-} // #post-list
+} // .post-list
 
 /* Hide SideBar and TOC */
 @media all and (max-width: 830px) {
@@ -125,7 +125,7 @@
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
 
-  #post-list {
+  .post-list {
     margin-top: 1.5rem;
     .post-preview .post-meta {
       .pin {
@@ -169,7 +169,7 @@
 
 /* Pannel hidden */
 @media all and (max-width: 1200px) {
-  #post-list {
+  .post-list {
     padding-right: 0;
   }
 }

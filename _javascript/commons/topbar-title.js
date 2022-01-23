@@ -21,7 +21,7 @@ $(function() {
 
   /* Replace topbar title while scroll screens. */
   $(window).scroll(function () {
-    if ($("#post-list").length /* in Home page */
+    if ($(".post-list").length /* in Home page */
       || postTitle.is(":hidden") /* is tab pages */
       || topbarTitle.is(":hidden") /* not mobile screens */
       || $("#sidebar.sidebar-expand").length) { /* when the sidebar trigger is clicked */

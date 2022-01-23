@@ -16,3 +16,5 @@ Gemfile.lock
 # npm dependencies
 node_modules
 package-lock.json
+
+.DS_Store
