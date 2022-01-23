@@ -1,5 +1,5 @@
 ---
-categories: [Traveling, Tiếng Việt]
+categories: [Traveling, Life, Tiếng Việt]
 title: Những Ngày Đầu Tiên Ở Nauy
 image:
   src: /assets/img/norway/fin_center.jpeg

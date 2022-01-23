@@ -1,0 +1,71 @@
+---
+categories: [Coding]
+title: My javascript solutions to Codility's training lessions
+---
+
+Though not being as extensive as Leetcode, [Codility](https://app.codility.com/programmers/lessons/1-iterations/) provides free, categorized training lessons for those who are preparing for a coding interview.
+Here are my solutions to all of these lessons. The codility total scores are 100% for most of the solutions. For some problems that I could not find the solutions by myself, the ideas were then taken from (mostly) the legendary stackoverflow.
+- Lesson 1: Iterations
+  - [Binary gap](https://app.codility.com/demo/results/trainingRXPNTP-C5Y/)
+- Lesson 2: Arrays
+  - [Cyclic rotation](https://app.codility.com/demo/results/trainingU85PPF-HFR/)
+  - [Odd occurences in array](https://app.codility.com/demo/results/trainingYQ9SGF-R7J/)
+- Lesson 3: Time complexity
+  - [Frog jmp](https://app.codility.com/demo/results/training6FWMWK-B9P/)
+  - [Perm missing elem](https://app.codility.com/demo/results/trainingVX52QJ-Z4Z/)
+  - [Tape equilibrium](https://app.codility.com/demo/results/training3659FG-378/)
+- Lesson 4: Counting elements
+  - [Frog river one](https://app.codility.com/demo/results/training2AMQ2G-V8V/)
+  - [Perm check](https://app.codility.com/demo/results/training955YFY-GD4/)
+  - [Max counter](https://app.codility.com/demo/results/trainingR88AFB-WHT/)
+  - [Missing interger](https://app.codility.com/demo/results/training6JDDZP-CR3/)
+- Lesson 5: Prefix sums
+  - [Passing cars](https://app.codility.com/demo/results/trainingFAVGS5-P26/)
+  - [Count div](https://app.codility.com/demo/results/training84VKCQ-X9U/)
+  - [Genomic range query](https://app.codility.com/demo/results/trainingNZYYGS-38Y/)
+  - [Min avg two slices](https://app.codility.com/demo/results/trainingNQ8C9Z-V3C/)
+- Lesson 6: Sorting
+  - [Distinct](https://app.codility.com/demo/results/training2FSCXY-R9A/)
+  - [Max product of three](https://app.codility.com/demo/results/trainingVXTNPD-E2A/)
+  - [Triangle](https://app.codility.com/demo/results/trainingA2HNS7-H9H/)
+  - [Number of disc intersections](https://app.codility.com/demo/results/training76PQXY-GAD/) (88%)
+- Lesson 7: Stacks and queues
+  - [Brackets](https://app.codility.com/demo/results/trainingABMMPH-M4N/)
+  - [Fish](https://app.codility.com/demo/results/trainingYTS4GS-FTS/)
+  - [Nesting](https://app.codility.com/demo/results/trainingY5H93D-MCS/)
+  - [Stone wall](https://app.codility.com/demo/results/training4KVKM4-RFP/)
+- Lesson 8: Leaders
+  - [Dominator](https://app.codility.com/demo/results/trainingQA55TA-8YD/)
+  - [Equi leader](https://app.codility.com/demo/results/training4CFKBV-GAG/)
+- Lesson 9: Maximum slice problem
+  - [Max profit](https://app.codility.com/demo/results/trainingGY8V7Z-FUQ/)
+  - [Max slice sum](https://app.codility.com/demo/results/training44T8S8-FGE/)
+  - [Max double slice sum](https://app.codility.com/demo/results/trainingQZ3F5G-BTZ/)
+- Lesson 10: Prime and composite numbers
+  - [Count factors](https://app.codility.com/demo/results/training7RY564-XUU/)
+  - [Min perimeter rectangle](https://app.codility.com/demo/results/training6SZKFB-C44/)
+  - [Flags](https://app.codility.com/demo/results/trainingV679N2-C7P/)
+  - [Peaks](https://app.codility.com/demo/results/training9SQ7VM-7SM/)
+- Lesson 11: Sieve of Eratosthenes
+  - [Count non divisible](https://app.codility.com/demo/results/trainingZRXXR8-BWP/)
+  - [Count semi primes](https://app.codility.com/demo/results/training6N9PGJ-VCV/)
+- Lesson 12: Euclidean algorithm
+  - [Chocolates by numbers](https://app.codility.com/demo/results/trainingQ734TX-MWA/)
+  - [Common prime divisors](https://app.codility.com/demo/results/trainingZ34E6V-EVG/)
+- Lesson 13: Fibonacci numbers
+  - [Fib frog](https://app.codility.com/demo/results/trainingJYAZ8E-QR9/)
+  - [Ladder](https://app.codility.com/demo/results/trainingEFJHFG-QWA/)
+- Lesson 14: Binary search algorithm
+  - [Min max division](https://app.codility.com/demo/results/training75Q9Z8-F33/)
+  - [Nailing planks](https://app.codility.com/demo/results/training9HYF6M-D8X/) (50%)
+- Lesson 15: Caterpillar method
+  - [Abs distinct](https://app.codility.com/demo/results/training3BY45U-JZQ/)
+  - [Count disctinct slices](https://app.codility.com/demo/results/trainingVFV62T-DYQ/)
+  - [Count triangles](https://app.codility.com/demo/results/trainingADX2UM-QG4/)
+  - [Min abs sum of two](https://app.codility.com/demo/results/trainingTV2U6N-3YP/)
+- Lesson 16: Greedy algorithms
+  - [Max non overlapping segments](https://app.codility.com/demo/results/trainingKQ43E5-R5R/)
+  - [Tie ropes](https://app.codility.com/demo/results/training79MZJ8-EW8/)
+- Lesson 17: Dynamic programming
+  - [Number solitaire](https://app.codility.com/demo/results/training7DYMET-AXN/)
+  - [Min abs sum](https://app.codility.com/demo/results/trainingYFEG76-BP5/)
