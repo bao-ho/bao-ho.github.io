@@ -1,6 +1,6 @@
 ---
 categories: [Coding]
-title: My javascript solutions to Codility's training lessions
+title: My javascript solutions to Codility training lessions
 ---
 
 Though not being as extensive as Leetcode, [Codility](https://app.codility.com/programmers/lessons/1-iterations/) provides free, categorized training lessons for those who are preparing for a coding interview.
