@@ -1,5 +1,6 @@
 ---
 categories: [Coding]
+title: 3D Model Viewer
 ---
 
 I built a 3D model viewer where user can import a wavefront .obj model, view the model, and navigating around (pan, zoom, rotate) using mouse and keyboard.
