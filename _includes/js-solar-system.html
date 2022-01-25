@@ -99,7 +99,7 @@
           dataView: homeDataView,
         };
 
-        // HAMMER JS FOR PANNING
+        /* HAMMER JS FOR PANNING */
         const myElement = document.getElementById("canvas-solar-system");
         const mc = new Hammer(myElement);
         mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
@@ -116,7 +116,7 @@
           }
         });
 
-        // WHEEL FOR ZOOMING
+        /* WHEEL FOR ZOOMING */
         const ZOOM_SCALE = 2 ** (1 / 8);
         function zoom1D(normPosition, start, end, factor) {
           const range = end - start;
@@ -133,7 +133,7 @@
           if (newScale > maxScale || newScale < minScale) {
             return;
           }
-          const p = { x: e.x - 8, y: e.y - 8 }; // body.margin = 8
+          const p = { x: e.x - 8, y: e.y - 8 }; /* body.margin = 8 */
           const { xMin, xMax, yMin, yMax } = viewState.dataView;
           const [xMinNew, xMaxNew] = zoom1D(
             p.x / width,
@@ -156,7 +156,7 @@
           viewState.scale = newScale;
         }
 
-        // BUTTONS' CALLBACK FUNCTIONS
+        /* BUTTONS' CALLBACK FUNCTIONS */
         myElement.onwheel = (e) => {
           e.preventDefault();
           zoom({ e, viewState });
@@ -192,9 +192,8 @@
           viewState.dataView = homeDataView;
         };
 
-        // GRAPHICS
+        /* GRAPHICS */
 
-        // Rotate p around y axis, translate X along x axis, rotate D around y axis, rotate A around x axis
         const transform = ({
           x0,
           y0,
@@ -222,7 +221,7 @@
           const y = y2 * ca - z2 * sa;
           let z = y2 * sa + z2 * ca;
 
-          // Only to create moon
+          /* Only to create moon */
           if (Dm) {
             x += Dm * Math.cos(rotationAroundYAxis);
             z += Dm * Math.sin(rotationAroundYAxis);
@@ -246,11 +245,11 @@
           let rotationAroundYAxis = 0;
           const render = () => {
             for (let j = -1.57; j <= 1.57; j += 0.2) {
-              // j <=> theta
+              /* j <=> theta */
               const ct = Math.cos(j);
               const st = Math.sin(j);
               for (i = 0; i < 6.28; i += 0.2) {
-                // i <=> phi
+                /* i <=> phi */
                 const ox = radius * ct;
                 const oy = radius * st;
                 const point = transform({
@@ -261,7 +260,7 @@
                   rotationAroundYAxis,
                   rotationAroundXAxis,
                 });
-                const ooz = 1 / (eyeToSphere + point.z); // one over z
+                const ooz = 1 / (eyeToSphere + point.z); /* one over z */
                 const { xMin, xMax, yMin, yMax } = viewState.dataView;
                 const u =
                   (width *
@@ -299,9 +298,9 @@
                   ctx.fillRect(xp, yp, dotSize, dotSize);
                 }
 
-                // Moon
+                /* Moon */
                 if (name === "Earth" && moon) {
-                  // i <=> phi
+                  /* i <=> phi */
                   const ox = (radius / 2) * ct;
                   const oy = (radius / 2) * st;
                   const point = transform({
@@ -313,7 +312,7 @@
                     rotationAroundXAxis,
                     Dm: X / 5,
                   });
-                  const ooz = 1 / (eyeToSphere + point.z); // one over z
+                  const ooz = 1 / (eyeToSphere + point.z); 
                   const { xMin, xMax, yMin, yMax } = viewState.dataView;
                   const u =
                     (width *
@@ -333,7 +332,7 @@
                     rotationAroundXAxis,
                   });
 
-                  // TODO: fix calculation of L
+                  /* TODO: fix calculation of L */
                   let L;
                   if (name === "Sun" || lightSource === "parallel") {
                     L = normalVector.y - normalVector.z;
@@ -379,7 +378,7 @@
                   rotationAroundYAxis: 0,
                   rotationAroundXAxis,
                 });
-                const ooz = 1 / (eyeToSphere + point.z); // one over z
+                const ooz = 1 / (eyeToSphere + point.z); 
                 const { xMin, xMax, yMin, yMax } = viewState.dataView;
                 const u =
                   (width *
@@ -429,7 +428,7 @@
         specs = [
           {
             name: "Earth",
-            color: "rgba(28,163,236,", //blue
+            color: "rgba(28,163,236,", /* blue */
             radius: width / 20,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
@@ -439,7 +438,7 @@
           },
           {
             name: "Sun",
-            color: "rgba(255,240,100,", //bright yellow
+            color: "rgba(255,240,100,", /* bright yellow */
             radius: width / 10,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
@@ -447,7 +446,7 @@
           },
           {
             name: "Mars",
-            color: "rgba(253,166,0,", //bright orange
+            color: "rgba(253,166,0,", /* bright orange */
             radius: width / 30,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
