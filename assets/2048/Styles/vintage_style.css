@@ -162,7 +162,7 @@
     color: #1d3c45;
     font-family: "Arial";
     text-align: center;
-    padding-top: 1em;
+    padding-top: 0.5em;
     width: 17rem;
     margin: 0 auto;
   }
@@ -173,7 +173,10 @@
     width: 15rem;
     margin: auto;
   }
-
+  .game-dark-mode {
+    background-color: #1B1B1E;
+    color: #f2ebe9;
+  }
   .info {
     display: grid;
     grid-gap: 1em;

@@ -281,10 +281,11 @@ function respondToKey(ke) {
     direction = "DOWN";
   }
 
+  if (ke.keyCode <= 40 && ke.keyCode >= 37) ke.preventDefault();
+
   if (direction !== null) {
     slide(direction);
   }
-  ke.preventDefault();
 
   return true;
 }
