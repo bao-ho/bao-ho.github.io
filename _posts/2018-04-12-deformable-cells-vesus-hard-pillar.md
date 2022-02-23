@@ -1,5 +1,5 @@
 ---
-categories: Physics
+categories: Research
 ---
 
 The dynamics of deformable objects, in particular biological cells,

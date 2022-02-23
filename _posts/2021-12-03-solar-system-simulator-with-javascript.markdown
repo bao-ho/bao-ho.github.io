@@ -1,5 +1,5 @@
 ---
-categories: [Physics, Coding]
+categories: [Research, Coding]
 ---
 
 I had 1.5 days during a Qlik hackathon to build something fun. I decided to build a simplified version of my [Solar System Simulator]({% post_url 2020-10-02-solar-system-simulator %}) using javascript. The graphics is rendered on a canvas. Planets/sun are drawn using dots with varied brightness. The math for lighting and animating can be found [here](https://www.a1k0n.net/2011/07/20/donut-math.html).

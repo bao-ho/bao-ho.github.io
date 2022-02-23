@@ -1,5 +1,5 @@
 ---
-categories: [Physics]
+categories: [Research]
 title: Simulation Demo at MSW 2016
 ---
 
