@@ -61,6 +61,14 @@
       >
         Zoom extent
       </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        style="margin: 2px"
+        onclick="changeSpeed();"
+      >
+        Speed
+      </button>
       <!-- <button onclick="showMoon();">Show Moon</button> -->
     </div>
     <!-- <div id="myElement"></div> -->
@@ -71,19 +79,20 @@
     ></script>
     <script>
       (function () {
-        const cavasElement = document.getElementById("canvas-solar-system");
+        const cavasElement = document.getElementById('canvas-solar-system');
         let timer = undefined;
-        let lightSource = "parallel";
-        const ctx = cavasElement.getContext("2d");
+        let lightSource = 'parallel';
+        const ctx = cavasElement.getContext('2d');
         ctx.canvas.width = cavasElement.clientWidth;
         ctx.canvas.height = cavasElement.clientHeight;
         const { width, height } = ctx.canvas;
-        const dotSize = width > 500 ? 2 : 1;
-        const traceDotSize = 2;
+        const dotSize = width > 500 ? 3 : 1;
+        const traceDotSize = 3;
+        let currentTimerInterval = 5;
         let solarSystem;
-        let traces = false;
+        let traces = true;
         let moon = false;
-        ctx.fillStyle = "#000";
+        ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, width, height);
         const homeDataView = {
           xMin: -width / 2,
@@ -100,15 +109,15 @@
         };
 
         /* HAMMER JS FOR PANNING */
-        const myElement = document.getElementById("canvas-solar-system");
+        const myElement = document.getElementById('canvas-solar-system');
         const mc = new Hammer(myElement);
-        mc.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-        mc.on("panleft panright panup pandown tap press", function (ev) {
+        mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+        mc.on('panleft panright panup pandown tap press', function (ev) {
           switch (ev.type) {
-            case "panup":
+            case 'panup':
               solarSystem.rotateAroundXAxis(0.02);
               break;
-            case "pandown":
+            case 'pandown':
               solarSystem.rotateAroundXAxis(-0.02);
               break;
             default:
@@ -164,7 +173,7 @@
 
         window.toggleAnimation = function () {
           if (timer === undefined) {
-            timer = setInterval(solarSystem.render, 50);
+            timer = setInterval(solarSystem.render, currentTimerInterval);
           } else {
             clearInterval(timer);
             timer = undefined;
@@ -172,10 +181,10 @@
         };
 
         window.toggleLightSource = function () {
-          if (lightSource === "parallel") {
-            lightSource = "point";
+          if (lightSource === 'parallel') {
+            lightSource = 'point';
           } else {
-            lightSource = "parallel";
+            lightSource = 'parallel';
           }
         };
 
@@ -190,6 +199,14 @@
         window.zoomExtent = function () {
           viewState.scale = 1;
           viewState.dataView = homeDataView;
+        };
+
+        window.changeSpeed = function () {
+          if (timer !== undefined) {
+            currentTimerInterval = 25 - currentTimerInterval;
+            clearInterval(timer);
+            timer = setInterval(solarSystem.render, currentTimerInterval);
+          }
         };
 
         /* GRAPHICS */
@@ -280,7 +297,7 @@
                   rotationAroundXAxis,
                 });
                 let L;
-                if (name === "Sun" || lightSource === "parallel") {
+                if (name === 'Sun' || lightSource === 'parallel') {
                   L = normalVector.y - normalVector.z;
                 } else {
                   const normDistance = Math.sqrt(
@@ -294,12 +311,12 @@
                     ) / normDistance;
                 }
                 if (L > 0) {
-                  ctx.fillStyle = color + L + ")";
+                  ctx.fillStyle = color + L + ')';
                   ctx.fillRect(xp, yp, dotSize, dotSize);
                 }
 
                 /* Moon */
-                if (name === "Earth" && moon) {
+                if (name === 'Earth' && moon) {
                   /* i <=> phi */
                   const ox = (radius / 2) * ct;
                   const oy = (radius / 2) * st;
@@ -312,7 +329,7 @@
                     rotationAroundXAxis,
                     Dm: X / 5,
                   });
-                  const ooz = 1 / (eyeToSphere + point.z); 
+                  const ooz = 1 / (eyeToSphere + point.z);
                   const { xMin, xMax, yMin, yMax } = viewState.dataView;
                   const u =
                     (width *
@@ -334,7 +351,7 @@
 
                   /* TODO: fix calculation of L */
                   let L;
-                  if (name === "Sun" || lightSource === "parallel") {
+                  if (name === 'Sun' || lightSource === 'parallel') {
                     L = normalVector.y - normalVector.z;
                   } else {
                     const normDistance = Math.sqrt(
@@ -348,7 +365,7 @@
                       ) / normDistance;
                   }
                   if (L > 0) {
-                    ctx.fillStyle = "rgba(255,255,255," + L + ")";
+                    ctx.fillStyle = 'rgba(255,255,255,' + L + ')';
                     ctx.fillRect(xp, yp, dotSize, dotSize);
                   }
                 }
@@ -378,7 +395,7 @@
                   rotationAroundYAxis: 0,
                   rotationAroundXAxis,
                 });
-                const ooz = 1 / (eyeToSphere + point.z); 
+                const ooz = 1 / (eyeToSphere + point.z);
                 const { xMin, xMax, yMin, yMax } = viewState.dataView;
                 const u =
                   (width *
@@ -390,7 +407,7 @@
                   (yMax - yMin);
                 const xp = u + width / 2;
                 const yp = height / 2 - v;
-                ctx.fillStyle = color + 075 + ")";
+                ctx.fillStyle = color + 075 + ')';
                 ctx.fillRect(xp, yp, traceDotSize, traceDotSize);
               }
             },
@@ -402,20 +419,20 @@
           const spheres = specs.map((spec) => createSphere(spec));
           const api = {
             render() {
-              ctx.fillStyle = "#000";
+              ctx.fillStyle = '#000';
               ctx.fillRect(0, 0, width, height);
               spheres.forEach((sphere) => {
-                if (sphere.name !== "Sun" && traces !== false) {
+                if (sphere.name !== 'Sun' && traces !== false) {
                   sphere.drawTrace();
                 }
                 sphere.animate();
               });
             },
             rotateAroundXAxis(deltaA) {
-              ctx.fillStyle = "#000";
+              ctx.fillStyle = '#000';
               ctx.fillRect(0, 0, width, height);
               spheres.forEach((sphere) => {
-                if (sphere.name !== "Sun" && traces !== false) {
+                if (sphere.name !== 'Sun' && traces !== false) {
                   sphere.drawTrace();
                 }
                 sphere.rotateAroundXAxis(deltaA);
@@ -427,8 +444,8 @@
 
         specs = [
           {
-            name: "Earth",
-            color: "rgba(28,163,236,", /* blue */
+            name: 'Earth',
+            color: 'rgba(28,163,236,' /* blue */,
             radius: width / 20,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
@@ -437,16 +454,16 @@
             resolutionAroundYAxis: 0.01,
           },
           {
-            name: "Sun",
-            color: "rgba(255,240,100,", /* bright yellow */
+            name: 'Sun',
+            color: 'rgba(255,240,100,' /* bright yellow */,
             radius: width / 10,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
             X: 0,
           },
           {
-            name: "Mars",
-            color: "rgba(253,166,0,", /* bright orange */
+            name: 'Mars',
+            color: 'rgba(253,166,0,' /* bright orange */,
             radius: width / 30,
             eyeToScreen: 5000,
             eyeToSphere: 6000,
