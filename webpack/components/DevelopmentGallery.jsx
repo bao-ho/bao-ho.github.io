@@ -100,7 +100,7 @@ export default function Gallery() {
       </Button>
       <Collapse
         in={openCollapse}
-        timeout="auto"
+        timeout='auto'
         unmountOnExit
         sx={{
           backgroundColor: 'white',
