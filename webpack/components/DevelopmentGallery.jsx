@@ -35,7 +35,7 @@ const itemData = [
   {
     img: '/assets/img/solar-system-js/cpp-3d-model-viewer.png',
     imgHover: '/assets/img/solar-system-js/cpp-3d-model-viewer.gif',
-    href: '/posts/posts/3d-model-viewer/',
+    href: '/posts/3d-model-viewer/',
     title: '3D Model Viewer',
     subtitle: 'C++, Visual Studio, OpenGL, Assimp',
   },
